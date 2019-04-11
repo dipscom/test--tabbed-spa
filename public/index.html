@@ -1,17 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bAaseline">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>test--tabbed-spa</title>
+    <title>Tabbed Form</title>
+    <style media="screen">
+      /* CSS Variables */
+      /* Change this before deploying */
+      :root {
+       --baseline: 1rem; /* 16px currently; */
+       --border-color: #C9D3DB;
+       --border-radius: 4px;
+      }
+
+      /* Resets */
+      html {
+        margin: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background-repeat: no-repeat;
+        box-sizing: inherit;
+      }
+
+      /* Remove all default styles and all elements look the same */
+      button,
+      input {
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       appearance: none;
+       overflow: visible;
+       border: 0;
+       outline: 0;
+       font: inherit;
+       -webkit-font-smoothing: inherit;
+       letter-spacing: inherit;
+       background: none;
+       vertical-align: top;
+      }
+
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      /* Styling */
+      * {
+       /* Assumes a vertical rhythm on all elements */
+       margin-bottom: var(--baseline);
+       font-size: var(--baseline);
+      }
+
+      /* Set margin bottom back to zero on wrapping element tags */
+      header, main, section, footer, form {
+        margin-bottom: 0;
+      }
+
+      body {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #525F7F;
+        background-color: #F5F9FC;
+        min-height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      /* Visual aids */
+      /* Creates a series of vertical lines to show our vertical rhythm */
+      .baseline body {
+        position: relative;
+      }
+
+      .baseline body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -3;
+        display: block;
+        background: linear-gradient(to bottom, hsla(150, 4%, 16%, 0.1), hsla(150, 4%, 16%, 0.1) 1px, transparent 1px, transparent);
+        background-size: 100% calc(var(--baseline) / 2);
+      }
+
+
+      header {
+        background-color: #fff;
+        -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 6px -6px rgba(0,0,0,0.1);
+        padding-top: var(--baseline);
+      }
+
+      header > *,
+      .page-footer > * {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 var(--baseline);
+      }
+
+      h1 {
+        font-size: calc(var(--baseline) * 2);
+        font-weight: normal;
+      }
+
+      main {
+        flex-grow: 1;
+        padding: calc(var(--baseline) * 1.5) 0;
+        overflow-y: auto;
+        position: relative;
+      }
+
+      button {
+        background-color: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        padding: calc(var(--baseline) * 0.5 - 1px) calc(var(--baseline) * 2);
+        cursor: pointer;
+      }
+
+      .page-footer {
+        background-color: #fff;
+        padding: var(--baseline);
+        -webkit-box-shadow: 0 -8px 6px -6px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0 -8px 6px -6px rgba(0,0,0,0.1);
+        box-shadow: 0 -8px 6px -6px rgba(0,0,0,0.1);
+      }
+
+      @media (max-width: 799px) {
+        main {
+          padding: 0;
+        }
+
+        button {
+          padding: calc(var(--baseline) - 1px) calc(var(--baseline) * 2);
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but test--tabbed-spa doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but this page doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <header>
+      <h1>Some heading</h1>
+    </header>
+    <main>
+      <div id="tabbed-form"></div>
+    </main>
+    <footer class="page-footer"><p>Some footer</p></footer>
   </body>
 </html>
