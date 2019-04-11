@@ -2,7 +2,7 @@
 
 As a test for a potential contract I was asked to code a, not-so small, tabbed component in VUE and document my process.
 
-[Here is a live demo hosted in Netlify](https://gracious-rosalind-840cbf.netlify.com/).
+[Here is a live demo hosted on Netlify](https://gracious-rosalind-840cbf.netlify.com/).
 
 Bellow is my documenting of it.
 
